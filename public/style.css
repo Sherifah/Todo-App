@@ -1,0 +1,80 @@
+html {
+    font-size: 62.5%;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  ul,
+  ol,
+  li,
+  a,
+  button,
+  input,
+  textarea {
+    margin: 0;
+    padding: 0;
+  }
+  
+  * {
+    box-sizing: border-box;
+    font-family: Poppins, sans-serif;
+  }
+  
+  .flex {
+    display: flex;
+  }
+  .column {
+    flex-direction: column;
+  }
+  .justify-end {
+    justify-content: flex-end;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .justify-between {
+    justify-content: space-between;
+  }
+  .align-center {
+    align-items: center;
+  }
+  .full {
+    width: 100%;
+  }
+  .pointer {
+    cursor: pointer;
+  }
+  
+  @media screen and (max-width: 768px) {
+    html {
+      font-size: 50%;
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    html {
+      font-size: 40%;
+    }
+  }
+  
+  @media screen and (max-width: 375px) {
+    html {
+      font-size: 35%;
+    }
+  }
+  
+  @media screen and (max-width: 320px) {
+    html {
+      font-size: 30%;
+    }
+  }
