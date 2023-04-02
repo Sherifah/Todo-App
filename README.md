@@ -8,11 +8,11 @@
 
 <div align="center">
   <h3>
-    <a href="https://{your-demo-link.your-domain}">
+    <a href="https://todo-app-two-murex.vercel.app/">
       Demo
     </a>
     <span> | </span>
-    <a href="https://{your-url-to-the-solution}">
+    <a href="https://devchallenges.io/solutions/lrmdYC3numAQH8fWix4C">
       Solution
     </a>
     <span> | </span>
@@ -37,18 +37,15 @@
 
 ## Overview
 
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+![screenshot]<img src="public/NoteApp.png"><img/>
 
-Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
+  <div>
+    This is a note-taking application built using React.js. The app allows users to create, edit, and delete notes. Notes can be saved and loaded from the browser's local storage.
+  </div>
 
-- Where can I see your demo?
-- What was your experience?
-- What have you learned/improved?
-- Your wisdom? :)
+  <div>The app demo can be found here <a href="https://todo-app-two-murex.vercel.app/">Note App Demo</a>. It was really fun and just a little challenging working on my first React project. As a designer myself, I had to make sure that the app interface is as pixel-perfect as possible. The responsive on mobile, tablet as well as desktop was a bit tasking too but it was a great chance to practice my CSS :).</div>
 
 ### Built With
-
-<!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
 
 - [React](https://reactjs.org/)
 - [HTML & CSS]
@@ -57,7 +54,13 @@ Introduce your projects by taking a screenshot or a gif. Try to tell visitors a 
 
 <!-- List the features of your application or follow the template. Don't share the figma file here :) -->
 
-This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://devchallenges.io/challenges/hH6PbOHBdPm6otzw2De5) was to build an application to complete the given user stories.
+This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://devchallenges.io/challenges/hH6PbOHBdPm6otzw2De5) was to build an application to complete the given user stories which are: 
+
+- [Create new notes]
+- [Edit existing notes]
+- [Delete notes]
+- [Save notes to local storage]
+- [Load notes from local storage]
 
 ## How To Use
 
@@ -78,9 +81,10 @@ $ npm start
 
 ## Acknowledgements
 
+- [This project was built as a learning exercise for React.js.]
+- [Thanks to Create React App for providing a great starting point for the project.]
 
 ## Contact
 
-- Website [your-website.com](https://{your-web-site-link})
-- GitHub [@your-username](https://{github.com/your-usermame})
-- Twitter [@your-twitter](https://{twitter.com/your-username})
+- GitHub [@Sherifah](https://github.com/Sherifah)
+- Twitter [@adelekesherifah](https://twitter.com/adelekesherifah)
