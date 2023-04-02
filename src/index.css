@@ -168,7 +168,7 @@ button {
 
 
 
-@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 1050px) {
   .tabs-list {
     width: 60%;
   }
