@@ -64,7 +64,16 @@ function App() {
   }
 
   function deleteTasks() {
-    setTasks([]);
+    const deletedTasks = tasks.filter((task) => {
+      if (filter === "Active") {
+        return task.taskCompleted
+      } else if (filter === "Completed") {
+        return !task.taskCompleted
+      } else if (filter === "All") {
+        return (setTasks([]))
+      }
+    })
+    setTasks(deletedTasks);
   }
 
   return (
