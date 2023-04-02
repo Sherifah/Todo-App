@@ -4,8 +4,6 @@ function Form(props) {
 
   const [name, setName] = useState("")
 
-
-
   function handleChange(e) {
     setName(e.target.value)
   }

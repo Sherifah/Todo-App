@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import FilterButton from "./components/FilterButton";
 import Form from "./components/Form";
 import Todo from "./components/Todo";
@@ -16,7 +16,7 @@ const FILTER_NAMES = Object.keys(FILTER_MAP);
 
 
 function App() {
-  const [tasks, setTasks] = useState([])
+  const [tasks, setTasks] = useState(() => JSON.parse(localStorage.getItem("tasks")) || [])
 
   const [filter, setFilter] = useState("All")
 
@@ -30,12 +30,21 @@ function App() {
       key={task.id}
       toggleTaskCompleted={toggleTaskCompleted}
       deleteTask={deleteTask}
+      editTask={editTask}
       />
   )
 
   const filterList = FILTER_NAMES.map((name) => (
     <FilterButton key={name} name={name} isPressed={ name === filter} setFilter={setFilter} />
   ))
+
+  //apply the save and get functions using useEffect
+  //get the saved notes and add them to the array
+
+  //saving data to local storage
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks])
 
   function addTask(name) {
     const newTask = { id: `todo-${nanoid()}`, name,  taskCompleted: false }
@@ -50,6 +59,16 @@ function App() {
     const remainingTasks = tasks.filter((task) => task.id !== id)
     setTasks(remainingTasks)
   }
+
+  function editTask(id, newName) {
+    const editedTaskList = tasks.map((task) => {
+      if (id === task.id) {
+        return {...task, name: newName}
+      }
+      return task
+    })
+    setTasks(editedTaskList);
+  } 
 
   function toggleTaskCompleted(id) {
     const updatedTasks = tasks.map((task) => {
@@ -76,6 +95,9 @@ function App() {
     setTasks(deletedTasks);
   }
 
+  const todoNoun = taskList.length > 1 ? "tasks" : "task";
+  const todoHeading = taskList.length === 0 ? "You have no tasks" : `You have ${taskList.length} ${todoNoun} remaining`;
+
   return (
     <div className="todo-app">
       <h1 className="todo-title">#Todo</h1>
@@ -83,13 +105,26 @@ function App() {
         {filterList}
       </div>
       <Form 
-        addTask={addTask}/>
+        addTask={addTask}
+        />
+      <div className="todo-number">
+        {todoHeading}
+      </div>
+      
       <div className="todo-list">
         {taskList}
       </div>
-      <button type="button" className="delete-tasks" onClick={deleteTasks} style={{visibility: tasks.length <= 0 ? "hidden" : "visible" }}>
-        <span style={{color: "white", marginRight: "5px"}}><RiDeleteBin6Line size={10}/></span> 
-        Delete All</button>
+      <button type="button" 
+              className="delete-tasks" 
+              onClick={deleteTasks} 
+              style={{visibility: taskList.length <= 0 ? "hidden" : "visible" }}
+            >
+        <span 
+          style={{color: "white", marginRight: "5px"}}>
+            <RiDeleteBin6Line size={10}/>
+        </span> 
+        Delete All
+      </button>
     </div>
   )
 }

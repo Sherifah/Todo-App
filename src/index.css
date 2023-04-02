@@ -62,8 +62,23 @@ body {
   margin-bottom: 20px;
 }
 
+.edit-add-task {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
 .task-input {
   width: 330px;
+  padding: 9.5px;
+  border: 1px solid #BDBDBD;
+  border-radius: 5px;
+}
+
+.edit-task-input {
+  width: 365px;
   padding: 9.5px;
   border: 1px solid #BDBDBD;
   border-radius: 5px;
@@ -72,6 +87,10 @@ body {
 .task-input:focus {
   outline: 3px dashed #228bec;
   outline-offset: 0;
+}
+
+button {
+  cursor: pointer;
 }
 
 .btn-add-task {
@@ -85,9 +104,16 @@ body {
   cursor: pointer;
 }
 
+.todo-number {
+  margin: 40px 420px;
+  margin-bottom: 0px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
 .todo-list {
   text-align: left;
-  margin: 30px 420px;
+  margin: 20px 420px;
   display: flex;
   flex-direction: column;
   gap: 28px;
@@ -116,9 +142,13 @@ body {
   outline-offset: 0;
 }
 
-.delete-task {
+.delete-task, .edit-task {
   background-color: #eaf3ff;
   border: none;
+}
+
+.edit-task {
+  margin-right: 10px;
 }
 
 .delete-tasks {
@@ -140,17 +170,40 @@ body {
 
 @media only screen and (max-width: 950px) {
   .tabs-list {
-    width: 47%;
+    width: 60%;
   }
 
   .tab-item {
-    width: 120px;
+    width: 130px;
   }
 
   .todo-list {
-    width: 46%;
+    width: 60%;
     text-align: left;
-    margin: 30px auto;
+    margin: 20px auto;
+  }
+
+  .task-input {
+    width: 50%;
+  }
+
+  .edit-task-input {
+    width: 87%;
+    padding: 9.5px;
+    border: 1px solid #BDBDBD;
+    border-radius: 5px;
+  }
+
+  .todo-number {
+    margin: 40px auto;
+    width: 60%;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .btn-add-task {
+    width: 80px;
   }
 }
 
@@ -169,10 +222,24 @@ body {
     width: 60%;
   }
 
+  .edit-task-input {
+    width: 83%;
+    padding: 9.5px;
+    border: 1px solid #BDBDBD;
+    border-radius: 5px;
+  }
+
   .todo-list {
     width: 83%;
     text-align: left;
-    margin: 30px auto;
+  }
+
+  .todo-number {
+    margin: 40px auto;
+    width: 83%;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 600;
   }
   
 }
